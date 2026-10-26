@@ -6,8 +6,8 @@ The project is split into a frontend client and a backend server, both housed ri
 
 ## Project Structure
 
-* **client/** - The frontend user interface and state logic.
-* **server/** - The REST API, database schemas, and server-side business logic.
+* **client** - The frontend user interface and state logic.
+* **server** - The REST API, database schemas, and server-side business logic.
 
 ## Getting Started
 
