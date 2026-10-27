@@ -61,7 +61,7 @@ export default function BookingForm() {
   return (
     <div className="row g-4">
       <div className="col-md-7">
-        <h1 className="h2">Book Room {room.roomNumber} <span className="badge text-bg-secondary text-capitalize fs-6">{room.type}</span></h1>
+        <h1 className="h2">Book Room {room.roomNumber} <span className={`badge type-badge text-capitalize fs-6 type-${room.type}`}>{room.type}</span></h1>
         <p>{room.description}</p>
         <p className="text-muted">Sleeps {room.capacity}</p>
         <div className="mb-4">

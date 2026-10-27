@@ -58,9 +58,12 @@ export default function RoomList() {
 
   return (
     <>
-      <h1 className="h2 mb-3">Find your room</h1>
+      <section className="hero">
+        <h1 className="h2">Find your perfect stay</h1>
+        <p>Pick your dates and see which rooms are free right now.</p>
+      </section>
 
-      <form className="card card-body shadow-sm mb-4" onSubmit={search}>
+      <form className="card card-body shadow-sm mb-4 filters-card" onSubmit={search}>
         <div className="row g-3 align-items-end">
           <div className="col-6 col-md-2">
             <label htmlFor="checkIn" className="form-label">Check-in</label>
@@ -105,11 +108,11 @@ export default function RoomList() {
         <div className="row g-3">
           {rooms.map((room) => (
             <div className="col-sm-6 col-lg-4" key={room._id}>
-              <div className="card h-100 shadow-sm">
+              <div className={`card room-card h-100 shadow-sm type-${room.type}`}>
                 <div className="card-body d-flex flex-column">
                   <div className="d-flex justify-content-between align-items-start">
                     <h2 className="h5 mb-0">Room {room.roomNumber}</h2>
-                    <span className="badge text-bg-secondary text-capitalize">{room.type}</span>
+                    <span className="badge type-badge text-capitalize">{room.type}</span>
                   </div>
                   <p className="text-muted small mt-2 mb-2">Sleeps {room.capacity}</p>
                   <div className="mb-3">
@@ -117,10 +120,10 @@ export default function RoomList() {
                       <span key={a} className="badge rounded-pill text-bg-light border me-1">{a}</span>
                     ))}
                   </div>
-                  <p className="mt-auto fs-5 fw-semibold mb-2">
+                  <p className="mt-auto fs-5 fw-semibold mb-2 price-tag">
                     ₹{room.pricePerNight.toLocaleString()} <small className="text-muted fw-normal">/ night</small>
                   </p>
-                  <Link to={bookingLink(room)} className="btn btn-outline-dark">Book this room</Link>
+                  <Link to={bookingLink(room)} className="btn btn-brand">Book this room</Link>
                 </div>
               </div>
             </div>

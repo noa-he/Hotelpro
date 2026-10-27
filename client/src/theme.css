@@ -1,0 +1,80 @@
+/* HotelPro colour theme: loads after Bootstrap and overrides its look */
+:root {
+  --brand-1: #4f46e5;
+  --brand-2: #7c3aed;
+  --brand-3: #ec4899;
+  --accent: #f59e0b;
+  --bs-primary: #4f46e5;
+  --bs-primary-rgb: 79, 70, 229;
+  --bs-link-color: #4f46e5;
+  --bs-link-hover-color: #3730a3;
+}
+
+body {
+  background: linear-gradient(180deg, #eef2ff 0%, #faf5ff 45%, #fff7ed 100%) fixed;
+  color: #1f2937;
+}
+
+/* Navbar */
+.app-navbar { background: linear-gradient(90deg, #4338ca, #7c3aed 55%, #db2777); box-shadow: 0 2px 12px rgba(67, 56, 202, 0.3); }
+.app-navbar .navbar-brand { font-weight: 700; letter-spacing: 0.02em; }
+.app-navbar .nav-link.active { color: #fde68a; }
+
+/* Buttons */
+.btn-dark {
+  background-image: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+  border-color: transparent;
+  color: #fff;
+}
+.btn-dark:hover, .btn-dark:focus-visible { background-image: linear-gradient(90deg, #4338ca, #6d28d9); border-color: transparent; color: #fff; }
+.btn-outline-dark {
+  --bs-btn-color: #4f46e5; --bs-btn-border-color: #4f46e5;
+  --bs-btn-hover-bg: #4f46e5; --bs-btn-hover-border-color: #4f46e5; --bs-btn-hover-color: #fff;
+  --bs-btn-active-bg: #4338ca; --bs-btn-active-border-color: #4338ca; --bs-btn-active-color: #fff;
+}
+.btn-brand {
+  border: 2px solid var(--brand-1); color: var(--brand-1); background: #fff; font-weight: 600;
+}
+.btn-brand:hover { background-image: linear-gradient(90deg, var(--brand-1), var(--brand-2)); border-color: transparent; color: #fff; }
+
+/* Hero banner on the room list */
+.hero {
+  position: relative; overflow: hidden; color: #fff;
+  background: linear-gradient(120deg, #4f46e5 0%, #7c3aed 50%, #ec4899 100%);
+  border-radius: 1rem; padding: 2rem 1.75rem; margin-bottom: 1.5rem;
+  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.25);
+}
+.hero::before, .hero::after { content: ''; position: absolute; border-radius: 50%; background: rgba(255, 255, 255, 0.12); }
+.hero::before { width: 220px; height: 220px; right: -60px; top: -80px; }
+.hero::after { width: 140px; height: 140px; right: 120px; bottom: -70px; background: rgba(245, 158, 11, 0.35); }
+.hero h1 { font-weight: 700; margin-bottom: 0.35rem; position: relative; }
+.hero p { margin: 0; opacity: 0.95; position: relative; }
+
+/* Search panel */
+.filters-card { border: 0; border-top: 4px solid var(--accent); border-radius: 0.75rem; }
+
+/* Room cards: colour by room type */
+.type-single { --type: #0f766e; }
+.type-double { --type: #1d4ed8; }
+.type-deluxe { --type: #6d28d9; }
+.type-suite  { --type: #be123c; }
+.room-card { border: 0; border-top: 5px solid var(--type, #4f46e5); border-radius: 0.75rem; transition: transform 0.15s, box-shadow 0.15s; }
+.room-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(31, 41, 55, 0.15) !important; }
+.type-badge { background: var(--type, #4f46e5); color: #fff; }
+.price-tag { color: var(--type, #4f46e5); }
+
+/* Amenity chips */
+.badge.rounded-pill.text-bg-light {
+  background-color: #eef2ff !important; color: #3730a3 !important; border-color: #c7d2fe !important;
+}
+
+/* Dashboard */
+.stat-card { border: 0; border-top: 5px solid var(--brand-1); border-radius: 0.75rem; }
+.col-6:nth-child(1) > .stat-card { border-top-color: #f59e0b; }
+.col-6:nth-child(2) > .stat-card { border-top-color: #4f46e5; }
+.col-6:nth-child(3) > .stat-card { border-top-color: #10b981; }
+.col-6:nth-child(4) > .stat-card { border-top-color: #ec4899; }
+.table-light { --bs-table-bg: #eef2ff; --bs-table-color: #3730a3; }
+
+/* Sign in / register / booking cards */
+.card { border-radius: 0.75rem; }

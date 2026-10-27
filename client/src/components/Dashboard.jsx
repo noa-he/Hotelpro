@@ -69,7 +69,7 @@ export default function Dashboard() {
             ['Booked value', `₹${revenue.toLocaleString()}`],
           ].map(([label, value]) => (
             <div className="col-6 col-md-3" key={label}>
-              <div className="card shadow-sm"><div className="card-body">
+              <div className="card shadow-sm stat-card"><div className="card-body">
                 <div className="fs-3 fw-semibold">{value}</div>
                 <div className="text-muted small">{label}</div>
               </div></div>

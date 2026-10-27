@@ -11,7 +11,7 @@ export default function Navbar() {
   const signOut = () => { logout(); close(); navigate('/login'); };
 
   return (
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-md navbar-dark app-navbar">
       <div className="container">
         <Link className="navbar-brand fw-semibold" to="/" onClick={close}>HotelPro</Link>
         <button
