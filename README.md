@@ -1,39 +1,21 @@
-# Hotelpro
+# HotelPro Project Documentation
 
-This is a full-stack hotel management web application. It handles room bookings, guest check-ins, and basic administrative tasks. 
+Phase-wise documentation for **HotelPro**, a full-stack hotel management web application (React, Node.js, Express, MongoDB, Socket.IO).
 
-The project is split into a frontend client and a backend server, both housed right here in this repository.
+## Phases
 
-## Project Structure
+| Phase | Folder | Documents |
+|-------|--------|-----------|
+| 1. Ideation | [Ideation Phase-(1)](Ideation%20Phase-(1)) | Brainstorm & Idea Prioritization · Define the Problem Statements · Empathy Map Canvas |
+| 2. Project Planning | [Project Planning Phase(2)](Project%20Planning%20Phase(2)) | Project Planning (backlog, sprints, velocity, milestones, risks) |
+| 3. Requirement Analysis | [Requirement Analysis(3)](Requirement%20Analysis(3)) | Customer Journey Map · Solution Requirements · Data Flow Diagram and User Stories · Technology Stack |
+| 4. Project Design | [Project Design Phase(4)](Project%20Design%20Phase(4)) | Problem - Solution Fit · Proposed Solution · Solution Architecture |
+| 5. Performance Testing | [Performance Testing](Performance%20Testing) | Functional test cases, concurrency test, load-test plan |
+| Technical reference | [Technical Documentation](Technical%20Documentation) | Setup, architecture, database, API reference, real-time, user guide, security, theme, deployment, roadmap |
 
-* **client** - The frontend user interface and state logic.
-* **server** - The REST API, database schemas, and server-side business logic.
+## Notes for reviewers
 
-## Getting Started
-
-To run this application locally, you will need to set up both the backend and frontend environments.
-
-### 1. Clone the repository
-```bash
-git clone https://github.com
-cd Hotelpro
-```
-
-### 2. Backend Setup (Server)
-Navigate to the server directory, install the required dependencies, and boot up the server environment:
-```bash
-cd server
-npm install
-npm run dev
-```
-*(Note: If the server requires environment variables for database connections, create a `.env` file in the root of the server folder before running).*
-
-### 3. Frontend Setup (Client)
-Open a new terminal session, switch over to the client directory, install the dependencies, and start the development server:
-```bash
-cd client
-npm install
-npm start
-```
-
-Once both servers are up, open your browser and navigate to the local port specified by the frontend setup to test the app.
+- Diagrams are written in Mermaid and render automatically on GitHub.
+- Technical content (API, schemas, roles, flows) is taken directly from the source code.
+- The Ideation documents (personas, brainstorm) are drafted from the product's target users.
+- In **Performance Testing**, the *Actual result* and *Status* columns are intentionally blank until the tests are run.
