@@ -10,7 +10,17 @@ const app = express();
 
 // Global middleware
 app.use(helmet());
-app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:5173' }));
+const clean = (s) => String(s || '').replace(/[^\x21-\x7E]/g, '').replace(/\/+$/, '');
+const allowedOrigins = (process.env.CLIENT_URL || 'http://localhost:5173')
+  .split(',')
+  .map(clean)
+  .filter(Boolean);
+console.log('CLIENT_URL raw:', JSON.stringify(process.env.CLIENT_URL));
+console.log('Allowed origins:', allowedOrigins);
+
+app.use(cors({
+  origin: (origin, cb) => cb(null, !origin || allowedOrigins.includes(origin)),
+}));
 app.use(express.json());
 app.use(morgan('dev'));
 

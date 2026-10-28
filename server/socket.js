@@ -5,7 +5,15 @@ let io = null;
 // Call once with the HTTP server
 exports.init = (httpServer) => {
   io = new Server(httpServer, {
-    cors: { origin: process.env.CLIENT_URL || 'http://localhost:5173' },
+    cors: {
+  origin: (origin, cb) => {
+    const allowed = (process.env.CLIENT_URL || 'http://localhost:5173')
+      .split(',')
+      .map((s) => s.replace(/[^\x21-\x7E]/g, '').replace(/\/+$/, ''))
+      .filter(Boolean);
+    cb(null, !origin || allowed.includes(origin));
+  },
+ },
   });
 
   io.on('connection', (socket) => {
